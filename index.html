@@ -182,16 +182,16 @@
 			$('.slideshow').each(function() {
 				var $this = $(this), body = $this.html(), num = parseInt($this.data('num')), 
 						name = $this.attr('id');
-				$this.empty();
-				for(var i = 1; i < num; ++i) {
+				$section = $('<section data-background-image="imgs/' + name + num + '.jpg" />');
+				$section.html(body);
+				$this.after($section);
+				for(var i = num-1; i > 0; --i) {
 					$section = $('<section data-transition="none" data-background-image="imgs/'
 							+ name + i + '.jpg" />');
 					$section.html(body);
-					$this.append($section);
+					$this.after($section);
 				}
-				$section = $('<section data-background-image="imgs/' + name + num + '.jpg" />');
-				$section.html(body);
-				$this.append($section);
+				$this.remove();
 			});
 			
 			// Full list of configuration options available at:
