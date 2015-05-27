@@ -146,7 +146,22 @@
 						<h2>Projects</h2>
 						<small><i>The results of some of the things I've worked on this year</i></small>
 					</section>
-					<section data-background-video="imgs/single_ring.mov" data-background-video="imgs/single_ring.mp4" data-background-video-loop>
+					<section data-background-video="imgs/single_ring.mp4,imgs/single_ring.webm" data-background-video-loop>
+						<div class="shadowbox">
+							<h3>Fieldlines Video</h3>
+						</div>
+					</section>
+					<div class="slideshow" id="tri" data-num="3">
+						<div class="shadowbox">
+							<h3>Triangulation</h3>
+						</div>
+					</div>
+					<section data-background-video="imgs/single_ring.mp4,imgs/single_ring.webm" data-background-video-loop>
+						<div class="shadowbox">
+							<h3>Fieldlines Video</h3>
+						</div>
+					</section>
+					<section data-background-video="imgs/single_ring.mp4,imgs/single_ring.webm" data-background-video-loop>
 						<div class="shadowbox">
 							<h3>Fieldlines Video</h3>
 						</div>
@@ -164,6 +179,21 @@
 			
 		<script>
 		$(document).ready(function() {
+			$('.slideshow').each(function() {
+				var $this = $(this), $body = $this.html(), num = parseInt($this.data('num')), 
+						name = $this.attr('id');
+				$this.empty();
+				for(var i = 1; i < num; ++i) {
+					$this.append($('<section data-transition="none" data-background-image="imgs/'
+							+ name + i + '.jpg">'));
+					$this.append($body);
+					$this.append($('</section>'));
+				}
+				$this.append($('<section data-background-image="imgs/' + name + num + '.jpg">'));
+				$this.append($body);
+				$this.append($('</section>'));
+			});
+			
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
