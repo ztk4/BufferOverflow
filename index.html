@@ -169,27 +169,27 @@
 					<section data-background-image="imgs/cm0591.jpg">
 						<div class="shadowbox fragment fade-in">
 							<h3>Climate Modeling</h3>
+							<small><i>Skeleton of Multiprocessing Code</i></small>
 							<pre><code data-trim>
-							#!/usr/bin/python
-							from multiprocessing import Pool
-							
-							#define routine BEFORE creating pool
-							def routine(*args, **kwargs):
-								pass
-							#define callback (if wanted) BEFORE creating pool
-							def done(ret_val):
-								pass
-							#create pool
-							p = Pool()
-							#Then read in large data AFTER creating pool
-							data = get_data()
-							#Schedule functions to evaluate with pool
-							for args in data:
-								p.apply_async(routine, args, callback=done)
-							#Tell pool you are done scheduling functions
-							p.close()
-							#Tell pool to wait in main process until all child processes terminate
-							p.join()
+#!/usr/bin/python
+from multiprocessing import Pool
+#define routine BEFORE creating pool
+def routine(*args, **kwargs):
+	pass
+#define callback (if wanted) BEFORE creating pool
+def done(ret_val):
+	pass
+#create pool
+p = Pool()
+#Then read in large data AFTER creating pool
+data = get_data()
+#Schedule functions to evaluate with pool
+for args in data:
+	p.apply_async(routine, args, callback=done)
+#Tell pool you are done scheduling functions
+p.close()
+#Tell pool to wait in main process until all child processes terminate
+p.join()
 							</code></pre>
 						</div>
 					</section>
