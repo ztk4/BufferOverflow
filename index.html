@@ -170,7 +170,7 @@
 						<div class="shadowbox fragment fade-in">
 							<h3>Climate Modeling</h3>
 							<small><i>Skeleton of Multiprocessing Code</i></small>
-							<pre><code data-trim>
+							<pre><code style="height: 100%" data-trim>
 #!/usr/bin/python
 from multiprocessing import Pool
 #define routine BEFORE creating pool
@@ -188,7 +188,8 @@ for args in data:
 	p.apply_async(routine, args, callback=done)
 #Tell pool you are done scheduling functions
 p.close()
-#Tell pool to wait in main process until all child processes terminate
+#Tell pool to wait in main process 
+#until all child processes terminate
 p.join()
 							</code></pre>
 						</div>
