@@ -147,23 +147,50 @@
 						<small><i>The results of some of the things I've worked on this year</i></small>
 					</section>
 					<section data-background-video="imgs/single_ring.mp4,imgs/single_ring.webm" data-background-video-loop>
-						<div class="shadowbox">
+						<div class="shadowbox fragment fade-out">
 							<h3>Fieldlines Video</h3>
 						</div>
 					</section>
-					<div class="slideshow" id="tri" data-num="3">
+					<div class="slideshow" id="tri" data-num="6"><!--Creates 6 slides with the same body, but different backgrounds-->
 						<div class="shadowbox">
 							<h3>Triangulation</h3>
 						</div>
 					</div>
-					<section data-background-video="imgs/single_ring.mp4,imgs/single_ring.webm" data-background-video-loop>
+					<section data-background-image="imgs/published.jpg">
 						<div class="shadowbox">
-							<h3>Fieldlines Video</h3>
+							<h3>Alignment of Cross-Section and Fieldlines</h3>
 						</div>
 					</section>
-					<section data-background-video="imgs/single_ring.mp4,imgs/single_ring.webm" data-background-video-loop>
-						<div class="shadowbox">
-							<h3>Fieldlines Video</h3>
+					<section data-background-video="imgs/cm1.mp4,imgs/cm1.webm" data-background-video-loop>
+						<div class="shadowbox fragment fade-out">
+							<h3>Climate Modeling</h3>
+						</div>
+					</section>
+					<section data-background-image="imgs/cm0591.jpg">
+						<div class="shadowbox fragment fade-in">
+							<h3>Climate Modeling</h3>
+							<pre><code>
+							#!/usr/bin/python
+							from multiprocessing import Pool
+							
+							#define routine BEFORE creating pool
+							def routine(*args, **kwargs):
+								pass
+							#define callback (if wanted) BEFORE creating pool
+							def done(ret_val):
+								pass
+							#create pool
+							p = Pool()
+							#Then read in large data AFTER creating pool
+							data = get_data()
+							#Schedule functions to evaluate with pool
+							for args in data:
+								p.apply_async(routine, args, callback=done)
+							#Tell pool you are done scheduling functions
+							p.close()
+							#Tell pool to wait in main process until all child processes terminate
+							p.join()
+							</code></pre>
 						</div>
 					</section>
 				</section>
