@@ -2,51 +2,51 @@
 /* Author: Justin Perry <http://github.com/ourmaninamsterdam> */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 
-.codepen, pre .comment, pre .title{
+.codepen, pre .hljs-comment, pre .hljs-title{
   color: #777;
 }
 
-.codepen, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype{
+.codepen, pre .hljs-variable, pre .hljs-attribute, pre .hljs-tag, pre .hljs-regexp, pre .ruby .hljs-constant, pre .xml .hljs-tag .hljs-title, pre .xml .hljs-pi, pre .xml .hljs-doctype, pre .html .hljs-doctype{
   color: #ab875d;
 }
 
-.codepen, pre .css .value{
+.codepen, pre .css .hljs-value{
   color: #cd6a51;
 }
 
-.codepen, pre .css .value .function, pre .css .value .string{
+.codepen, pre .css .hljs-value .hljs-function, pre .css .hljs-value .hljs-string{
   color: #a67f59;
 }
 
-.codepen, pre .css .value .number{
+.codepen, pre .css .hljs-value .hljs-number{
   color: #9b869c;
 }
 
-.codepen, pre .css .id, pre .css .class, pre .css-pseudo, pre .css .selector, pre .css .tag{
+.codepen, pre .css .hljs-id, pre .css .hljs-class, pre .hljs-css-pseudo, pre .css .hljs-selector, pre .css .hljs-tag{
   color: #dfc48c;
 }
 
-.codepen, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+.codepen, pre .hljs-number, pre .hljs-preprocessor, pre .hljs-built_in, pre .hljs-literal, pre .hljs-params, pre .hljs-constant {
   color: #ab875d;
 }
 
-.codepen, pre .ruby .class .title, pre .css .rules .attribute {
+.codepen, pre .ruby .hljs-class .hljs-title, pre .css .hljs-rules .hljs-attribute {
   color: #9B869B;
 }
 
-.codepen, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+.codepen, pre .hljs-string, pre .hljs-value, pre .hljs-inheritance, pre .hljs-header, pre .ruby .hljs-symbol, pre .xml .hljs-cdata {
   color: #8f9c6c;
 }
 
-.codepen, pre .css .hexcolor {
+.codepen, pre .css .hljs-hexcolor {
   color: #cd6a51;
 }
 
-.codepen, .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
+.codepen, .hljs-function, pre .python .hljs-decorator, pre .python .hljs-title, pre .ruby .hljs-function .hljs-title, pre .ruby .hljs-title .hljs-keyword, pre .perl .hljs-sub, pre .javascript .hljs-title, pre .coffeescript .hljs-title {
   color: #fff;
 }
 
-.codepen, pre .keyword, pre .javascript .function {
+.codepen, pre .hljs-keyword, pre .javascript .hljs-function {
   color: #8f9c6c;
 }
 
