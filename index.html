@@ -180,18 +180,18 @@
 		<script>
 		$(document).ready(function() {
 			$('.slideshow').each(function() {
-				var $this = $(this), $body = $this.html(), num = parseInt($this.data('num')), 
+				var $this = $(this), body = $this.html(), num = parseInt($this.data('num')), 
 						name = $this.attr('id');
 				$this.empty();
 				for(var i = 1; i < num; ++i) {
-					$this.append($('<section data-transition="none" data-background-image="imgs/'
-							+ name + i + '.jpg">'));
-					$this.append($body);
-					$this.append($('</section>'));
+					$section = $('<section data-transition="none" data-background-image="imgs/'
+							+ name + i + '.jpg" />');
+					$section.html(body);
+					$this.append($section);
 				}
-				$this.append($('<section data-background-image="imgs/' + name + num + '.jpg">'));
-				$this.append($body);
-				$this.append($('</section>'));
+				$section = $('<section data-background-image="imgs/' + name + num + '.jpg" />');
+				$section.html(body);
+				$this.append($section);
 			});
 			
 			// Full list of configuration options available at:
