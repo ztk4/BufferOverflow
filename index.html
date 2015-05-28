@@ -275,6 +275,7 @@ p.join()
 				]
 			});
 			
+			//cookie stuff with popup
 			cookie_val = $.cookie('blockSpacebarMessage');
 			if(!cookie_val || cookie_val == 'false') {
 
@@ -282,13 +283,13 @@ p.join()
 				response = confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
 						"skip vertical slides.\nAfter closing this dialog, you may type the '?' (Shift + '/') to display a help menu.\n\n" +
 						"To hide this popup click OK, to prevent it from showing again click Cancel.");
-				alert(response);
+				//alert(response);
 				if(response) {
-					alert('cookie false');
-					$.cookie('blockSpacebarMessage', true, cookieDict);
-				} else {
-					alert('cookie true');
+					//alert('cookie false');
 					$.cookie('blockSpacebarMessage', false, cookieDict);
+				} else {
+					//alert('cookie true');
+					$.cookie('blockSpacebarMessage', true, cookieDict);
 				}
 
 			}
