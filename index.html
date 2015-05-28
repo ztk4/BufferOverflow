@@ -100,7 +100,7 @@
 					</section>
 				</section>
 				<section><!--Requirements-->
-					<section data-background-image="imgs/code.png" data-background-position='left'>
+					<section data-background-image="imgs/codecrop.jpg" data-background-position='left'>
 						<div class="shadowbox">
 							<h2>The Essentials</h2>
 							<ul>
@@ -116,17 +116,19 @@
 							</ul>
 						</div>
 					</section>
-					<section>
-						<h2>The Less-Essentials</h2>
-						<small><i>Beneficial Qualifications that are Not Necessary to Start this Internship</i></small>
-						<ul>
-							<li>Familiarity using a linux based operating system, and using the shell</li>
-							<li>Familiarity using ssh and scp to connect to and interact with a remote host</li>
-							<li>Comfortable using visualization software such as <a href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt</a> or <a href="http://www.paraview.org/">Paraview</a></li>
-							<li>Access to a POSIX terminal at home, to do work through over a VPN when offsite
-								<ul><li>This is not necessary, as there are other ways to work remotely over the VPN</li></ul>
-							</li>
-						</ul>
+					<section data-background-image="imgs/codecrop.jpg" data-background-position='left'>
+						<div class="shadowbox">
+							<h2>The Less-Essentials</h2>
+							<small><i>Beneficial Qualifications that are Not Necessary to Start this Internship</i></small>
+							<ul>
+								<li>Familiarity using a linux based operating system, and using the shell</li>
+								<li>Familiarity using ssh and scp to connect to and interact with a remote host</li>
+								<li>Comfortable using visualization software such as <a href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt</a> or <a href="http://www.paraview.org/">Paraview</a></li>
+								<li>Access to a POSIX terminal at home, to do work through over a VPN when offsite
+									<ul><li>This is not necessary, as there are other ways to work remotely over the VPN</li></ul>
+								</li>
+							</ul>
+						</div>
 					</section>
 				</section>
 				<section data-background-image="imgs/station.png"><!--Regular Day-->
@@ -163,7 +165,7 @@
 							<h3>Fieldlines Video</h3>
 						</div>
 					</section>
-					<div class="slideshow" id="tri" data-num="6"><!--Creates 6 slides with the same body, but different backgrounds-->
+					<div class="slideshow" id="tricrop" data-num="6"><!--Creates 6 slides with the same body, but different backgrounds-->
 						<div class="shadowbox">
 							<h3>Triangulation</h3>
 						</div>
@@ -173,7 +175,7 @@
 							<h3>Cross-Section Videos</h3>
 						</div>
 					</section>
-					<section data-background-video="vids/iter.mp4,vids/iter.webm" data-background-video-loop>
+					<section data-background-video="vids/iter1.mp4,vids/iter1.webm" data-background-video-loop>
 						<!--No body, feature is the background-->
 					</section>
 					<div class="slideshow" id="align" data-num="4">
@@ -218,6 +220,15 @@ p.join()
 						</div>
 					</section>
 				</section>
+				<section>
+					<h2>Thank You!</h2>
+					<p class="fragment fade-in">To Mr. Feibush</p>
+					<p class="fragment fade-in">To Bum Shik Kim</p>
+					<p class="fragment fade-in">To You</p>
+					<br />
+					<br />
+					<small class="fragment fade-in"><i>Questions?</i></small>
+				</section>
 			</div>
 
 		</div>
@@ -234,7 +245,7 @@ p.join()
 				var $this = $(this), body = $this.html(), num = parseInt($this.data('num')), 
 						name = $this.attr('id');
 				for(var i = num; i > 0; --i) {
-					$section = $('<section data-transition="none" data-background-image="imgs/'
+					$section = $('<section data-transition="none" data-background-size="contain" data-background-image="imgs/'
 							+ name + i + '.jpg" />');
 					$section.html(body);
 					$this.after($section);
@@ -266,10 +277,12 @@ p.join()
 
 			if(!$.cookie('blockSpacebarMessage')) {
 
-				cookieDict = {expires: 150, path:'/'};
-
-				if(confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
-					  "skip vertical slides. To hide this popup click OK, to prevent it from showing again click Cancel.")) {
+				cookieDict = {expires: 150, path:'/senexp'};
+				response = confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
+						"skip vertical slides.\nAfter closing this dialog, you may type the '?' (Shift + '/') to display a help menu.\n\n" +
+						"To hide this popup click OK, to prevent it from showing again click Cancel.");
+				alert(response);
+				if(reponse) {
 					alert('cookie false');
 					$.cookie('blockSpacebarMessage', true, cookieDict);
 				} else {
