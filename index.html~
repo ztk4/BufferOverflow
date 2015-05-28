@@ -275,6 +275,7 @@ p.join()
 				]
 			});
 			
+			//cookie stuff with popup
 			cookie_val = $.cookie('blockSpacebarMessage');
 			if(!cookie_val || cookie_val == 'false') {
 
