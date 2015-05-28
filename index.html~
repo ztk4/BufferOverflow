@@ -277,10 +277,12 @@ p.join()
 
 			if(!$.cookie('blockSpacebarMessage')) {
 
-				cookieDict = {expires: 150, path:'/'};
-
-				if(confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
-					  "skip vertical slides. To hide this popup click OK, to prevent it from showing again click Cancel.")) {
+				cookieDict = {expires: 150, path:'/senexp'};
+				response = confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
+						"skip vertical slides.\nAfter closing this dialog, you may type the '?' (Shift + '/') to display a help menu.\n\n" +
+						"To hide this popup click OK, to prevent it from showing again click Cancel.");
+				alert(response);
+				if(reponse) {
 					alert('cookie false');
 					$.cookie('blockSpacebarMessage', true, cookieDict);
 				} else {
