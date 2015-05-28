@@ -166,7 +166,7 @@
 						</div>
 					</section>
 					<div class="slideshow" id="tricrop" data-num="6"><!--Creates 6 slides with the same body, but different backgrounds-->
-						<div class="shadowbox">
+						<div class="shadowbox fragment fade-out">
 							<h3>Triangulation</h3>
 						</div>
 					</div>
@@ -179,7 +179,7 @@
 						<!--No body, feature is the background-->
 					</section>
 					<div class="slideshow" id="align" data-num="4">
-						<div class="shadowbox">
+						<div class="shadowbox fragment fade-out">
 							<h3>Alignment of Cross-Section and Fieldlines</h3>
 						</div>
 					</div>
@@ -244,12 +244,18 @@ p.join()
 			$('.slideshow').each(function() {
 				var $this = $(this), body = $this.html(), num = parseInt($this.data('num')), 
 						name = $this.attr('id');
-				for(var i = num; i > 0; --i) {
-					$section = $('<section data-transition="none" data-background-size="contain" data-background-image="imgs/'
-							+ name + i + '.jpg" />');
-					$section.html(body);
+
+				var $section = $('<section data-transition="none" data-background-size="contain" data-background-image="imgs/'
+							+ name + num + '.jpg" />');
+				$section.html(body);
+				$this.after($section);
+
+				for(var i = num-1; i > 0; --i) {
+					var $section = $('<section data-transition="none" data-background-size="contain" data-background-image="imgs/'
+							+ name + num + '.jpg" />');
 					$this.after($section);
 				}
+
 				$this.remove();
 			});
 			
@@ -281,7 +287,8 @@ p.join()
 
 				cookieDict = {expires: 150, path:'/senexp'};
 				response = confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
-						"skip vertical slides.\nAfter closing this dialog, you may type the '?' key (Shift + '/') to display a help menu.\n\n" +
+						"skip vertical slides.\nAfter closing this dialog, you may type the '?' key (Shift + '/') to display a help menu.\nAlso, not all resources " +
+						"load properly in IE, any other modern browser is recommended!\n\n" + 
 						"To hide this popup click OK, to prevent it from showing again click Cancel.");
 				//alert(response);
 				if(response) {
