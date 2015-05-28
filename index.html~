@@ -274,8 +274,9 @@ p.join()
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
-
-			if(!$.cookie('blockSpacebarMessage')) {
+			
+			cookie_val = $.cookie('blockSpacebarMessage');
+			if(!cookie_val || cookie_val == 'false') {
 
 				cookieDict = {expires: 150, path:'/senexp'};
 				response = confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
