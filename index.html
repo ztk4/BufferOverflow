@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/pppl.css" id="theme">
+		<link rel="stylesheet" href="css/theme/buf.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/tomorrow-night.css" />
@@ -41,45 +41,125 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section><!--Title Slide-->
-					<h1>Princeton Plasma Physics Laboratory</h1>
-					<h4>PPPL</h4>
+					<h1>Buffer Overflows</h1>
+                    <h4><i>Smashing the Stack for Fun and Profit</i> - Aleph One</h4>
 					<small>
-						~ <a href="http://www.github.com/Musicdude14z">Zachary Trent Kaplan</a> - <a href="mailto:zackap@bergen.org">zackap@bergen.org</a>
-						<br />
-						Mentor: <a href="http://w3.pppl.gov/~efeibush/">Eliot Feibush</a> - <a href="mailto:efeibush@pppl.gov">efeibush@pppl.gov</a>
+						~ <a href="http://www.github.com/ztk4">Zachary Trent Kaplan</a> - <a href="mailto:ztk4@njit.edu">ztk4@njit.edu</a>
 						<br /><br />
-						Repository for this Presentation: <a href="https://github.com/Musicdude14z/senexp">Senior Experience Presentation</a>
+						Repository for this Presentation: <a href="https://github.com/ztk4/BufferOverflow">Buffer Overflow Presentation</a>
 						<br /><br />
 						<i>Made with <a href="http://lab.hakim.se/reveal-js/">reveal.js</a> - <a href="https://github.com/hakimel/reveal.js/">Repository</a></i>
 					</small>
 				</section>
+
 				<section><!--About Section-->
-					<section data-background-iframe="http://www.pppl.gov">
+					<section data-background-image="imgs/comp_mem.jpg">
 					<div class="shadowbox">
-						<h2>About the Lab</h2>
-						<small>More Info: <a href="http://www.pppl.gov">pppl.gov</a></small>
+                        <h2>What <i>is</i> a Buffer?</h2>
+						<small>Contiguous Memory</small>
 					</div>
 					</section>
-					<section data-background-image="https://ext-sweb.pppl.gov/tsd/images/PPPL.aerial.JPG">
-						<div class="shadowbox">
-								<h3>History</h3>
-								<ul>
-									<li>
-										Magnetic fusion research at Princeton began in 1951
-										<ul><li>Inspired by the research of Professor Spitzer</li></ul>
-									</li>
-									<li>The project was soon changed to PPPL in 1961</li>
-								</ul>
+					<section class="fullslide">
+                        <div class="hold" style="margin-top: -25%">
+                            <div class="fragment current-visible" style="width: 100%">
+						    	<h3>Memory in C</h3>
+                                <small>Command Line Input (CLI): &nbsp;<i>./agree "Yes"</i></small>
+                                <br />
+                                <div style="float: left; width: 50%;">
+                                    <small><h6>agree.c</h6></small>
+                                    <pre><code class="codepen cpp" style="max-height: none; max-width: none; width: 100%; margin-top: -5%; font-size: 20px; line-height: 1.2em;" data-trim>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
 
-								<h3>Statistics &amp; Facts</h3></h3>
-								<small><i>- 2012</i></small>
-								<ul>
-									<li>PPPL is funded by the U.S. Department of Energy (DoE) through the Office of Science</li>
-									<li>454 full time employees
-										<ul><li>Not counting 38 graduate students, additional subcontractors, and visiting research staff</li></ul>
-									</li>
-								</ul>
-						</div>
+int bad_code(char *arg1) {
+    char cpy[16]; 
+    strcpy(cpy, arg1);
+    cpy[15] = '\0';
+    
+    return strcmp(cpy, "Yes");
+}
+
+int main(int argc, char **argv) {
+    if(argc != 2) {
+        printf("Usage: %s reply\n", *argv);
+        return 1;
+    }
+
+    if(bad_code(argv[1]) == 0)
+        printf("Thanks for agreeing!\n");
+    else
+        printf("I'm sorry, I don't understand\n");
+
+    return 0;
+}
+                                   </code></pre>
+                                </div>
+                                <div style="float: left; width: 45%;">
+                                    <small>
+                                        <h6>Stack</h6>
+                                    </small>
+                                    <table class="callstack">
+                                        <caption>Increasing Addresses &rarr;</caption>
+                                        <tr class="blendup"><td colspan="8">&nbsp;<br />Parent Frame (main)</td></tr>
+                                        <tr style="background-color:#f33"><td colspan="8">Return Address</td></tr>
+                                        <tr style="background-color:#3f3"><td colspan="8">Saved Frame Pointer</td></tr>
+                                        <tr style="background-color:#ff3"><td colspan="8">char *arg1</td></tr>
+                                        <tr style="background-color:#25f"><td colspan="8">char cpy[16]</td></tr>
+                                        <tr style="background-color:#25f"><td colspan="4" style="border-top-style: none; width:50%;"></td><td>\0</td><td>s</td><td>e</td><td>Y</td></tr>
+                                        <tr class="blenddown"><td colspan="8">Unused Stack Space<br />&nbsp;</td></tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="fragment current-visible" style="width: 100%">
+						    	<h3>Memory in C</h3>
+                                <small>Command Line Input (CLI): &nbsp;<i>./agree $(python -c "print 'A'*36")</i></small>
+                                <br />
+                                <div style="float: left; width: 50%;">
+                                    <small><h6>agree.c</h6></small>
+                                    <pre><code class="codepen cpp" style="max-height: none; max-width: none; width: 100%; margin-top: -5%; font-size: 20px; line-height: 1.2em;" data-trim>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int bad_code(char *arg1) {
+    char cpy[16]; 
+    strcpy(cpy, arg1);
+    cpy[15] = '\0';
+    
+    return strcmp(cpy, "Yes");
+}
+
+int main(int argc, char **argv) {
+    if(argc != 2) {
+        printf("Usage: %s reply\n", *argv);
+        return 1;
+    }
+
+    if(bad_code(argv[1]) == 0)
+        printf("Thanks for agreeing!\n");
+    else
+        printf("I'm sorry, I don't understand\n");
+
+    return 0;
+}
+                                   </code></pre>
+                                </div>
+                                <div style="float: left; width: 45%;">
+                                    <small>
+                                        <h6>Stack</h6>
+                                    </small>
+                                    <table class="callstack">
+                                        <caption>Increasing Addresses &rarr;</caption>
+                                        <tr class="blendup"><td colspan="8">&nbsp;<br />Parent Frame (main)</td></tr>
+                                        <tr style="background-color:#f33"><td colspan="3" style="width: 37.5%">Return Address</td><td>\0</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr style="background-color:#3f3"><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr style="background-color:#ff3"><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr style="background-color:#25f"><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr style="background-color:#25f"><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr class="blenddown"><td colspan="8">Unused Stack Space<br />&nbsp;</td></tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 					</section>
 					<section>
 						<h3 style="margin-top: -35%">Current Info</h3>
