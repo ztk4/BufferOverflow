@@ -1,308 +1,329 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>Senior Experience at the Princetion Plasma Physics Laboratory</title>
+        <title>Senior Experience at the Princetion Plasma Physics Laboratory</title>
 
-		<meta name="description" content="An Internship in Data Visualization">
-		<meta name="author" content="Zachary Trent Kaplan">
+        <meta name="description" content="An Internship in Data Visualization">
+        <meta name="author" content="Zachary Trent Kaplan">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/pppl.css" id="theme">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/buf.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/tomorrow-night.css" />
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/tomorrow-night.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
+        <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section><!--Title Slide-->
-					<h1>Princeton Plasma Physics Laboratory</h1>
-					<h4>PPPL</h4>
-					<small>
-						~ <a href="http://www.github.com/Musicdude14z">Zachary Trent Kaplan</a> - <a href="mailto:zackap@bergen.org">zackap@bergen.org</a>
-						<br />
-						Mentor: <a href="http://w3.pppl.gov/~efeibush/">Eliot Feibush</a> - <a href="mailto:efeibush@pppl.gov">efeibush@pppl.gov</a>
-						<br /><br />
-						Repository for this Presentation: <a href="https://github.com/Musicdude14z/senexp">Senior Experience Presentation</a>
-						<br /><br />
-						<i>Made with <a href="http://lab.hakim.se/reveal-js/">reveal.js</a> - <a href="https://github.com/hakimel/reveal.js/">Repository</a></i>
-					</small>
-				</section>
-				<section><!--About Section-->
-					<section data-background-iframe="http://www.pppl.gov">
-					<div class="shadowbox">
-						<h2>About the Lab</h2>
-						<small>More Info: <a href="http://www.pppl.gov">pppl.gov</a></small>
-					</div>
-					</section>
-					<section data-background-image="https://ext-sweb.pppl.gov/tsd/images/PPPL.aerial.JPG">
-						<div class="shadowbox">
-								<h3>History</h3>
-								<ul>
-									<li>
-										Magnetic fusion research at Princeton began in 1951
-										<ul><li>Inspired by the research of Professor Spitzer</li></ul>
-									</li>
-									<li>The project was soon changed to PPPL in 1961</li>
-								</ul>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section><!--Title Slide-->
+                    <h1>Buffer Overflows</h1>
+                    <h4><i>Smashing the Stack for Fun and Profit</i> - Aleph One</h4>
+                    <small>
+                        ~ <a href="http://www.github.com/ztk4">Zachary Trent Kaplan</a> - <a href="mailto:ztk4@njit.edu">ztk4@njit.edu</a>
+                        <br /><br />
+                        Repository for this Presentation: <a href="https://github.com/ztk4/BufferOverflow">Buffer Overflow Presentation</a>
+                        <br /><br />
+                        <i>Made with <a href="http://lab.hakim.se/reveal-js/">reveal.js</a> - <a href="https://github.com/hakimel/reveal.js/">Repository</a></i>
+                    </small>
+                </section>
 
-								<h3>Statistics &amp; Facts</h3></h3>
-								<small><i>- 2012</i></small>
-								<ul>
-									<li>PPPL is funded by the U.S. Department of Energy (DoE) through the Office of Science</li>
-									<li>454 full time employees
-										<ul><li>Not counting 38 graduate students, additional subcontractors, and visiting research staff</li></ul>
-									</li>
-								</ul>
-						</div>
-					</section>
-					<section>
-						<h3 style="margin-top: -35%">Current Info</h3>
-						<div class="hold">
-							<div class="fragment current-visible">
-								<h3>Mission Statement</h3>
-								<blockquote cite="http://www.pppl.gov/about">
-									"The DOE Princeton Plasma Physics Laboratory works with collaborators across the globe to develop fusion as an energy source for the world, and conducts research along the broad frontier of plasma science and technology. PPPL also nurtures the national research enterprise in these fields, and educates the next generation of plasma and fusion scientists."
-								</blockquote>
-							</div>
-							<div class='fragment current-visible'>
-								<h3>Vision</h3>
-								<blockquote cite="http://www.pppl.gov/about">
-									"Enabling a world powered by safe, clean and plentiful fusion energy while leading discoveries in plasma science and technology."
-								</blockquote>
-							</div>
-						</div>
-					</section>
-				</section>
-				<section><!--Requirements-->
-					<section data-background-image="imgs/codecrop.jpg" data-background-position='left'>
-						<div class="shadowbox">
-							<h2>The Essentials</h2>
-							<ul>
-								<li>General background in Computer Science</li>
-								<li>Ideally familiar with Python
-									<small><ul><li>If not, at least some other C-style language (eg. C++, Java, JavaScript, Ruby)</li></ul></small>
-								</li>
-								<li>Comfortable using online documentation to understand an unfamiliar API</li>
-								<li>Basic concept of a POSIX shell and a unix/linux os
-									<small><ul><li>However, there are Windows and Macintosh computers available to work on</li></ul></small>
-								</li>
-								<li>Interest in Visualization and Solving Problems with Computer Science</li>
-							</ul>
-						</div>
-					</section>
-					<section data-background-image="imgs/codecrop.jpg" data-background-position='left'>
-						<div class="shadowbox">
-							<h2>The Less-Essentials</h2>
-							<small><i>Beneficial Qualifications that are Not Necessary to Start this Internship</i></small>
-							<ul>
-								<li>Familiarity using a linux based operating system, and using a shell</li>
-								<li>Familiarity using ssh and scp to connect to and interact with a remote host</li>
-								<li>Comfortable using visualization software such as <a href="https://wci.llnl.gov/simulation/computer-codes/visit/">VisIt</a> or <a href="http://www.paraview.org/">Paraview</a></li>
-								<li>Access to a POSIX terminal at home, to do work over a VPN when offsite
-									<ul><li>This is not necessary, as there are other ways to work remotely over the VPN</li></ul>
-								</li>
-							</ul>
-						</div>
-					</section>
-				</section>
-				<section data-background-image="imgs/station.png"><!--Regular Day-->
-					<div class="shadowbox">
-						<h2>A Regular Wednesday</h2>
-						<table class="schedule">
-							<tr><th class="time">Time</th><th>Activity</th></tr>
-							<tr><td class="time">8:00 AM</td><td> - Leave my house to drive to the lab</td></p>
-							<tr><td class='time'>9:00-10:00 AM</td><td> - Arrive at the lab, check in, and discuss the plan for the day with Mr. Feibush; begin working</td></tr>
-							<tr><td class='time'>12:00-1:00 PM</td><td> - Eat lunch with other interns and Mr. Feibush (PPPL has one of the best cafeterias with fantastic food)</td></tr>
-							<tr><td class='time'>1:00 PM</td><td> - Discuss progress made and what is to be done next with Mr. Feibush</td></tr>
-							<tr><td class='time'>4:30-5:00 PM</td><td> - Conclude by discussing progress made with Mr. Feibush, and then packing up and heading home</td></tr>
-						</table>
-					</div>
-				</section>
-				<section data-background-iframe="http://www.princeton.edu/researchcomputing/about/picscie/">
-					<div class="shadowbox">
-						<h3>PICSciE</h3>
-						<p>On a couple Wednesdays, Mr. Feibush took us to the Lewis Library where we acted as TA's for lessons about Python, NumPy, and VisIt</p>
-						<small><p>More Info: <a href="http://www.princeton.edu/researchcomputing/about/picscie/">princeton.edu/researchcomputing/about/picscie</a></p></small>
-					</div>
-				</section>
-				<section>
-					<section>
-						<h2>Projects</h2>
-						<small><i>
-							The results of some of the things I've worked on this year
-							<br />
-							More at: <a href="http://w3.pppl.gov/~efeibush/movies/">Graphics Directory</a>
-						</i></small>
-					</section>
-					<section data-background-video="vids/single_ring.mp4,vids/single_ring.webm" data-background-video-loop>
-						<div class="shadowbox fragment fade-out">
-							<h3>Fieldlines Video</h3>
-						</div>
-					</section>
-					<div class="slideshow" id="tricrop" data-num="6"><!--Creates 6 slides with the same body, but different backgrounds-->
-						<div class="shadowbox fragment fade-out">
-							<h3>Triangulation</h3>
-						</div>
-					</div>
-					<section data-background-video="vids/gtcp_hd.mp4,vids/gtcp_hd.webm" data-background-video-loop>
-						<div class="shadowbox fragment fade-out">
-							<h3>Cross-Section Videos</h3>
-						</div>
-					</section>
-					<section data-background-video="vids/iter1.mp4,vids/iter1.webm" data-background-video-loop>
-						<!--No body, feature is the background-->
-					</section>
-					<div class="slideshow" id="align" data-num="4">
-						<div class="shadowbox fragment fade-out">
-							<h3>Alignment of Cross-Section and Fieldlines</h3>
-						</div>
-					</div>
-					<section data-background-video="vids/multi.mp4,vids/multi.webm" data-background-video-loop>
-						<div class="shadowbox fragment fade-out">
-							<h3>Climate Modeling</h3>
-						</div>
-					</section>
-					<section data-background-video="vids/multiatl.mp4,vids/multiatl.webm" data-background-video-loop>
-						<!--No body, feature is the background-->
-					</section>
-					<section data-background-image="imgs/hdsst0591.jpeg">
-						<div class="shadowbox fragment fade-in">
-							<h3>Climate Modeling</h3>
-							<small><i>Skeleton of Multiprocessing Code</i></small>
-							<pre><code class="codepen" style="max-height: none; max-width: none; width: 110%; margin-left: -5%;" data-trim>
-#!/usr/bin/python
-from multiprocessing import Pool
-#define routine BEFORE creating pool
-def routine(*args, **kwargs):
-	pass
-#define callback (if wanted) BEFORE creating pool
-def done(ret_val):
-	pass
-#create pool
-p = Pool()
-#Then read in large data AFTER creating pool
-data = get_data()
-#Schedule functions to evaluate with pool
-for args in data:
-	p.apply_async(routine, args, callback=done)
-#Tell pool you are done scheduling functions
-p.close()
-#Tell pool to wait in main process 
-#until all child processes terminate
-p.join()
-							</code></pre>
-						</div>
-					</section>
-				</section>
-				<section>
-					<h2>Thank You!</h2>
-					<p class="fragment fade-in">To Mr. Feibush</p>
-					<p class="fragment fade-in">To Bum Shik Kim</p>
-					<p class="fragment fade-in">To You</p>
-					<br />
-					<br />
-					<small class="fragment fade-in"><i>Questions?</i></small>
-				</section>
-			</div>
+                <section><!--Buffers-->
+                    <section data-background-image="imgs/comp_mem.jpg">
+                    <div class="shadowbox">
+                        <h2>What <i>is</i> a Buffer?</h2>
+                        <small>Contiguous Memory</small>
+                    </div>
+                    </section>
+                    <section class="fullslide">
+                        <div class="hold" style="margin-top: -25%">
+                            <div class="fragment current-visible" style="width: 100%">
+                                <h3>Memory in C</h3>
+                                <small>Command Line Input (CLI): &nbsp;<i>./agree "Yes"</i></small>
+                                <br />
+                                <div style="float: left; width: 50%;">
+                                    <small><h6>agree.c</h6></small>
+                                    <pre><code class="codepen cpp" style="max-height: none; max-width: none; width: 100%; margin-top: -5%; font-size: 20px; line-height: 1.2em;" data-trim>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
 
-		</div>
+int bad_code(char *arg1) {
+    char cpy[16]; 
+    strcpy(cpy, arg1);
+    cpy[15] = '\0';
+    
+    return strcmp(cpy, "Yes");
+}
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-		
-		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="js/jQcookie/jquery.cookie.js"></script>
-			
-		<script>
-		$(document).ready(function() {
-			$('.slideshow').each(function() {
-				var $this = $(this), body = $this.html(), num = parseInt($this.data('num')), 
-						name = $this.attr('id');
+int main(int argc, char **argv) {
+    if(argc != 2) {
+        printf("Usage: %s reply\n", *argv);
+        return 1;
+    }
 
-				for(var i = num; i > 1; --i) {
-					var $section = $('<section data-transition="none" data-background-size="contain" data-background-image="imgs/'
-							+ name + i + '.jpg" />');
-					$this.after($section);
-				}
+    if(bad_code(argv[1]) == 0)
+        printf("Thanks for agreeing!\n");
+    else
+        printf("I'm sorry, I don't understand\n");
 
-				var $section = $('<section data-transition="none" data-background-size="contain" data-background-image="imgs/'
-							+ name + '1.jpg" />');
-				$section.html(body);
-				$this.after($section);
+    return 0;
+}
+                                   </code></pre>
+                                </div>
+                                <div style="float: left; width: 45%;">
+                                    <small>
+                                        <h6>Stack</h6>
+                                    </small>
+                                    <table class="callstack">
+                                        <caption>Increasing Addresses &rarr;</caption>
+                                        <tr class="blendup"><td colspan="8">&nbsp;<br />Parent Frame (main)</td></tr>
+                                        <tr style="background-color:#f33"><td colspan="8">Return Address</td></tr>
+                                        <tr style="background-color:#3f3"><td colspan="8">Saved Frame Pointer</td></tr>
+                                        <tr style="background-color:#ff3"><td colspan="8">char *arg1</td></tr>
+                                        <tr style="background-color:#25f"><td colspan="8">char cpy[16]</td></tr>
+                                        <tr style="background-color:#25f"><td colspan="4" style="border-top-style: none; width:50%;"></td><td>\0</td><td>s</td><td>e</td><td>Y</td></tr>
+                                        <tr class="blenddown"><td colspan="8">Unused Stack Space<br />&nbsp;</td></tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="fragment current-visible" style="width: 100%">
+                                <h3>Memory in C</h3>
+                                <small>Command Line Input (CLI): &nbsp;<i>./agree $(python -c "print 'A'*36")</i></small>
+                                <br />
+                                <div style="float: left; width: 50%;">
+                                    <small><h6>agree.c</h6></small>
+                                    <pre><code class="codepen cpp" style="max-height: none; max-width: none; width: 100%; margin-top: -5%; font-size: 20px; line-height: 1.2em;" data-trim>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
 
-				$this.remove();
-			});
-			
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+int bad_code(char *arg1) {
+    char cpy[16]; 
+    strcpy(cpy, arg1);
+    cpy[15] = '\0';
+    
+    return strcmp(cpy, "Yes");
+}
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-				backgroundTransition: 'fade',
+int main(int argc, char **argv) {
+    if(argc != 2) {
+        printf("Usage: %s reply\n", *argv);
+        return 1;
+    }
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-			
-			//cookie stuff with popup
-			cookie_val = $.cookie('blockSpacebarMessage');
-			if(!cookie_val || cookie_val == 'false') {
+    if(bad_code(argv[1]) == 0)
+        printf("Thanks for agreeing!\n");
+    else
+        printf("I'm sorry, I don't understand\n");
 
-				cookieDict = {expires: 150, path:'/senexp'};
-				response = confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
-						"skip vertical slides.\nAfter closing this dialog, you may type the '?' key (Shift + '/') to display a help menu.\nAlso, not all resources " +
-						"load properly in IE, any other modern browser is recommended!\n\n" + 
-						"To hide this popup click OK, to prevent it from showing again click Cancel.");
-				//alert(response);
-				if(response) {
-					//alert('cookie false');
-					$.cookie('blockSpacebarMessage', false, cookieDict);
-				} else {
-					//alert('cookie true');
-					$.cookie('blockSpacebarMessage', true, cookieDict);
-				}
+    return 0;
+}
+                                   </code></pre>
+                                </div>
+                                <div style="float: left; width: 45%;">
+                                    <small>
+                                        <h6>Stack</h6>
+                                    </small>
+                                    <table class="callstack">
+                                        <caption>Increasing Addresses &rarr;</caption>
+                                        <tr class="blendup"><td colspan="8">&nbsp;<br />Parent Frame (main)</td></tr>
+                                        <tr style="background-color:#f33"><td colspan="3" style="width: 37.5%">Return Address</td><td>\0</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr style="background-color:#3f3"><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr style="background-color:#ff3"><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr style="background-color:#25f"><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr style="background-color:#25f"><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td><td>A</td></tr>
+                                        <tr class="blenddown"><td colspan="8">Unused Stack Space<br />&nbsp;</td></tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section><!--An Example Attack-->
+                    <section data-background-image="imgs/first_look.png" data-background-size='contain'>
+                        <div class="shadowbox fragment fade-out">
+                            <h2>An Example Attack</h2>
+                            <small>
+                                All the files shown can be found in <a href="http://github.com/ztk4/BufferOverflow/tree/master/pres">this directory</a>
+                                <br /><br />
+                                <i>
+                                    Remember to use the Makefile to compile overflow with symbols on and stack protection off<br />
+                                    to change the owner of overflow and it's privelages to u=rwxs; g=rx; o=r,<br />
+                                    and to disable aslr on your machine before compiling.
+                                </i>
+                            </small>
+                        </div>
+                    </section>
+                    <section class="fullslide">
+                        <h3>overflow.c</h3>
+                            <div style="width: 55%; display: inline; position: absolute; top: 90%; left: 0;">
+                                <pre><code class="codepen cpp" style="max-height: none; max-width: none; width: 100%; margin-top: -5%; font-size: 18px; line-height: 1.2em;" data-trim>
+#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;string.h&gt;
+#include &lt;openssl/md5.h&gt;
 
-			}
+void grant_shell() {
+    printf("Welcome back superuser!\nHere's your shell:\n");
+    setuid(geteuid());
+    char *const args[] = {"/bin/sh",  NULL};
+    execv(args[0], args);
+}
 
-		});
-		</script>
+//easy way of storing hash in source file 
+//(16 bytes represented as 16 uint8's)
+uint8_t valid_hash[] = {193, 179, 147, 105, 178, 122, 16, 111,
+                        31, 197, 119, 133, 91, 193, 217, 252}; 
 
-	</body>
+int verify(char *argv1) {
+    char passwd[21];        //holds 20 characters plus a null byte
+    strcpy(passwd, argv1);
+    passwd[20] = '\0';      //set the last char to null
+
+    uint8_t hash[16];       //enough space for 16 byte hash
+    MD5(passwd, strlen(passwd), (char *)hash);
+
+    return !memcmp(hash, valid_hash, 16);
+}
+                                </code></pre>
+                            </div>
+                            <div style="width: 45%; display: inline; position: absolute; top: 200%; right: 0;">
+                                <pre><code class="codepen cpp" style="max-height: none; max-width: none; width: 100%; margin-top: -5%; font-size: 18px; line-height: 1.2em;" data-trim>
+int main(int argc, char **argv) {
+    if(argc != 2) {
+        printf("Usage: %s passwd\n", *argv);
+        return 1;
+    }
+
+    if(verify(argv[1])) { //if password is okay
+        grant_shell();
+    } else {
+        printf("You're not the superuser, "
+                "you don't know the password!!\n");
+    }
+    
+    return 0;
+}
+                                </code></pre>
+                            </div>
+                    </section>
+                    <div class="slideshow" id="gdb" data-type=".png" data-num="6"><!-- Creates 6 slides with the same body, but different background-->
+                        <div class="shadowbox fragment fade-out">
+                            <h3>GDB</h3>
+                            <small><i>The GNU Project Debugger</i></small>
+                        </div>
+                    </div>
+                    <section data-background-image="imgs/success.png">
+                        <div class="shadowbox fragment fade-out">
+                            <h3>Success!</h3>
+                            <small><i>We now have a shell with root privelages</i></small>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <h2>Thank You!</h2>
+                    <br />
+                    <br />
+                    <small class="fragment fade-in"><i>Questions?</i></small>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="js/jQcookie/jquery.cookie.js"></script>
+            
+        <script>
+        $(document).ready(function() {
+            $('.slideshow').each(function() {
+                var $this = $(this), body = $this.html(), num = parseInt($this.data('num')), 
+                        name = $this.attr('id');
+
+                for(var i = num; i > 1; --i) {
+                    var $section = $('<section data-transition="none" data-background-size="contain" data-background-image="imgs/'
+                            + name + i + $this.data('type') + '" />');
+                    $this.after($section);
+                }
+
+                var $section = $('<section data-transition="none" data-background-size="contain" data-background-image="imgs/'
+                            + name + '1' + $this.data('type') + '" />');
+                $section.html(body);
+                $this.after($section);
+
+                $this.remove();
+            });
+            
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                backgroundTransition: 'fade',
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            
+            //cookie stuff with popup
+            cookie_val = $.cookie('blockSpacebarMessage');
+            if(!cookie_val || cookie_val == 'false') {
+
+                cookieDict = {expires: 150, path:'/senexp'};
+                response = confirm("NOTE: For the best navigation experience, use the Spacebar to navigate this presentation. Using the left and right arrow keys may " + 
+                        "skip vertical slides.\nAfter closing this dialog, you may type the '?' key (Shift + '/') to display a help menu.\nAlso, not all resources " +
+                        "load properly in IE, any other modern browser is recommended!\n\n" + 
+                        "To hide this popup click OK, to prevent it from showing again click Cancel.");
+                //alert(response);
+                if(response) {
+                    //alert('cookie false');
+                    $.cookie('blockSpacebarMessage', false, cookieDict);
+                } else {
+                    //alert('cookie true');
+                    $.cookie('blockSpacebarMessage', true, cookieDict);
+                }
+
+            }
+
+        });
+        </script>
+
+    </body>
 </html>
