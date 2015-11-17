@@ -299,21 +299,25 @@ code {
     border-radius: 10px;
 }
 
-.callstack {
-	font-size: 25px !important;
-    color: #222;
-    width: 100%;
+.caption {
+    -webkit-transform: rotate(-90deg) translate(-1200%, -50%);
+    -o-transform: rotate(-90deg) translate(-1200%, -50%);
+    transform: rotate(-90deg) translate(-1200%, -50%);
+    -webkit-transform-origin: center center;
+    -o-transform-origin: center center;
+    transform-origin: center center;
+    line-height: 1.2em;
+    font-size: 0.8em !important;
+    width: 5%;
+    white-space: nowrap;
+    float: left;
 }
 
-.callstack caption {
-    color: #fff;
-    caption-side: left;
-    -webkit-transform: rotate(-90deg) translate(-100%, -50%);
-    -ms-transform: rotate(-90deg) translate(-100%, -50%);
-    transform: rotate(-90deg) translate(-100%, -50%);
-    white-space: nowrap;
-    width: 1.2em;
-    vertical-align: middle;
+.callstack {
+    float: right;
+	font-size: 25px !important;
+    color: #222;
+    width: 95%;
 }
 
 .callstack tr {
